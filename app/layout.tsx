@@ -1,6 +1,7 @@
 import type { Metadata, Viewport } from "next";
 import { Geist, Geist_Mono } from "next/font/google";
 import { GoogleAnalytics } from "@next/third-parties/google";
+import { Analytics } from "@vercel/analytics/next";
 import "./globals.css";
 import { ThemeProvider, themeBootScript } from "@/components/theme-provider";
 
@@ -76,6 +77,7 @@ export default function RootLayout({
       <body className="min-h-full flex flex-col bg-[var(--color-bg)] text-[var(--color-fg)]">
         <ThemeProvider>{children}</ThemeProvider>
         {gaId ? <GoogleAnalytics gaId={gaId} /> : null}
+        <Analytics />
       </body>
     </html>
   );
