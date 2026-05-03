@@ -4,6 +4,7 @@ import Link from "next/link";
 import { ImageIcon } from "lucide-react";
 import { ThemeToggle } from "./theme-toggle";
 import { track } from "@/lib/analytics";
+import Image from "next/image"
 
 const links = [
   { href: "#how-it-works", label: "How it works" },
@@ -23,7 +24,13 @@ export function SiteHeader() {
           className="flex items-center gap-2 font-semibold tracking-tight"
         >
           <span className="grid h-7 w-7 place-items-center rounded-lg bg-[var(--color-fg)] text-[var(--color-bg)]">
-            <ImageIcon className="h-4 w-4" />
+            <Image
+      src="/icon" // or "/icon.png" depending on your route setup
+      alt="Autocropper logo"
+      width={28}
+      height={28}
+    />
+
           </span>
           Autocropper
         </Link>
