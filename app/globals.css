@@ -1,0 +1,115 @@
+@import "tailwindcss";
+
+@custom-variant dark (&:where(.dark, .dark *));
+
+@theme {
+  --font-sans: var(--font-geist-sans);
+  --font-mono: var(--font-geist-mono);
+
+  --color-bg: #ffffff;
+  --color-bg-soft: #fafafa;
+  --color-bg-elev: #ffffff;
+  --color-fg: #0a0a0a;
+  --color-fg-muted: #525252;
+  --color-fg-subtle: #737373;
+  --color-border: #e5e5e5;
+  --color-border-strong: #d4d4d4;
+  --color-accent: #6366f1;
+  --color-accent-fg: #ffffff;
+  --color-accent-soft: #eef2ff;
+}
+
+:root {
+  color-scheme: light;
+}
+
+.dark {
+  color-scheme: dark;
+  --color-bg: #050507;
+  --color-bg-soft: #0a0a0c;
+  --color-bg-elev: #0f0f12;
+  --color-fg: #fafafa;
+  --color-fg-muted: #a3a3a3;
+  --color-fg-subtle: #737373;
+  --color-border: #1f1f23;
+  --color-border-strong: #2a2a30;
+  --color-accent: #818cf8;
+  --color-accent-fg: #0a0a0c;
+  --color-accent-soft: #1a1b2e;
+}
+
+html, body {
+  height: 100%;
+}
+
+body {
+  background: var(--color-bg);
+  color: var(--color-fg);
+  font-family: var(--font-sans), system-ui, -apple-system, "Segoe UI", sans-serif;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+  text-rendering: optimizeLegibility;
+}
+
+::selection {
+  background: var(--color-accent);
+  color: var(--color-accent-fg);
+}
+
+/* Dotted background grid used in hero / sections */
+.bg-grid {
+  background-image:
+    radial-gradient(circle at 1px 1px, color-mix(in srgb, var(--color-fg) 8%, transparent) 1px, transparent 0);
+  background-size: 28px 28px;
+}
+
+.dark .bg-grid {
+  background-image:
+    radial-gradient(circle at 1px 1px, color-mix(in srgb, var(--color-fg) 12%, transparent) 1px, transparent 0);
+}
+
+.checker {
+  background-image:
+    linear-gradient(45deg, color-mix(in srgb, var(--color-fg) 8%, transparent) 25%, transparent 25%),
+    linear-gradient(-45deg, color-mix(in srgb, var(--color-fg) 8%, transparent) 25%, transparent 25%),
+    linear-gradient(45deg, transparent 75%, color-mix(in srgb, var(--color-fg) 8%, transparent) 75%),
+    linear-gradient(-45deg, transparent 75%, color-mix(in srgb, var(--color-fg) 8%, transparent) 75%);
+  background-size: 16px 16px;
+  background-position: 0 0, 0 8px, 8px -8px, -8px 0;
+}
+
+.glow {
+  background:
+    radial-gradient(60% 50% at 50% 0%, color-mix(in srgb, var(--color-accent) 22%, transparent) 0%, transparent 60%);
+}
+
+@keyframes shimmer {
+  0% { transform: translateX(-100%); }
+  100% { transform: translateX(100%); }
+}
+
+.shimmer::before {
+  content: "";
+  position: absolute;
+  inset: 0;
+  background: linear-gradient(
+    90deg,
+    transparent 0%,
+    color-mix(in srgb, var(--color-fg) 8%, transparent) 50%,
+    transparent 100%
+  );
+  animation: shimmer 1.4s infinite;
+}
+
+* {
+  border-color: var(--color-border);
+}
+
+/* Smooth scroll */
+html {
+  scroll-behavior: smooth;
+}
+
+/* Hide scrollbar while keeping function in horizontal scrollers */
+.no-scrollbar::-webkit-scrollbar { display: none; }
+.no-scrollbar { scrollbar-width: none; }
