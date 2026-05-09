@@ -1,7 +1,7 @@
 import type { MetadataRoute } from "next";
 import { listPosts } from "@/lib/blog";
 
-const SITE_URL = process.env.NEXT_PUBLIC_SITE_URL || "https://autocropper.app";
+const SITE_URL = process.env.NEXT_PUBLIC_SITE_URL || "https://autocropper.org";
 
 export default function sitemap(): MetadataRoute.Sitemap {
   const now = new Date();

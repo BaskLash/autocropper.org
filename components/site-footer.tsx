@@ -71,7 +71,7 @@ export function SiteFooter() {
             ))}
             <li>
               <ExternalTrackedLink
-                href="mailto:hello@autocropper.app"
+                href="mailto:business.promptin@gmail.com"
                 label="Contact"
                 location="footer"
                 className="hover:text-[var(--color-fg)]"

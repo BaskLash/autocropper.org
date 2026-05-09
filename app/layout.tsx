@@ -17,7 +17,7 @@ const geistMono = Geist_Mono({
   display: "swap",
 });
 
-const SITE_URL = process.env.NEXT_PUBLIC_SITE_URL || "https://autocropper.app";
+const SITE_URL = process.env.NEXT_PUBLIC_SITE_URL || "https://autocropper.org";
 
 export const metadata: Metadata = {
   metadataBase: new URL(SITE_URL),

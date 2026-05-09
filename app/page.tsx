@@ -97,7 +97,7 @@ export default function Home() {
           trackId="faq"
           eyebrow="FAQ"
           title={<>Common questions</>}
-          description="If anything's missing, ping us at hello@autocropper.app."
+          description="If anything's missing, ping us at business.promptin@gmail.com."
         >
           <FAQ />
         </Section>
