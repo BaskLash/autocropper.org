@@ -1,6 +1,5 @@
 import { ImageIcon } from "lucide-react";
 import { TrackedLink } from "./tracked-link";
-import { ExternalTrackedLink } from "./external-tracked-link";
 
 export function SiteFooter() {
   const productLinks = [
@@ -11,6 +10,7 @@ export function SiteFooter() {
   ];
   const companyLinks = [
     { href: "/blog/why-your-icons-look-blurry", label: "Field notes" },
+    { href: "/contact", label: "Contact" },
   ];
 
   return (
@@ -69,14 +69,6 @@ export function SiteFooter() {
                 </TrackedLink>
               </li>
             ))}
-            <li>
-              <ExternalTrackedLink
-                href="mailto:business.promptin@gmail.com"
-                label="Contact"
-                location="footer"
-                className="hover:text-[var(--color-fg)]"
-              />
-            </li>
           </ul>
         </div>
       </div>

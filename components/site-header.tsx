@@ -12,6 +12,7 @@ const links = [
   { href: "#calculator", label: "Savings" },
   { href: "#pricing", label: "Pricing" },
   { href: "/blog", label: "Blog" },
+  { href: "/contact", label: "Contact" },
 ];
 
 export function SiteHeader() {
